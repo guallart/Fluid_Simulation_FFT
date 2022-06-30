@@ -35,7 +35,7 @@ k_vals_y = fftfreq(N_Y) .* N_Y
 k_x = repeat(k_vals_x, 1, length(k_vals_y))
 k_y = repeat(k_vals_y', length(k_vals_x), 1)
 
-k_norm = [norm([k_x, k_y]) for k_x in k_vals_x, k_y in k_vals_y]
+k_norm = [norm([kx, ky]) for kx in k_vals_x, ky in k_vals_y]
 k_norm[iszero.(k_norm)] .= 1.0
 
 k_x ./= k_norm
